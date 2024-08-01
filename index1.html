@@ -1,0 +1,86 @@
+<html>
+  <head>
+  </head>
+  <style>
+   
+    *{
+      font-family: poppins, sans-serif;
+    }
+    form{
+      margin: 15px 5px;
+      width: 500px;
+      font-size: 16px;
+    }
+    form h1{
+      text-align: center;
+    }
+    form label{
+      display: block;
+      margin-bottom: 5px;
+    }
+    form input, form textarea{
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      resize: vertical;
+    }
+    form button{
+      background: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      margin-top: 5px;
+      border: none;
+      cursor: pointer;
+    }
+    form button:hover{
+      background: green;
+    }
+  </style>
+  <body>
+    <form>
+      <p style="text-align:center"> <h1>FORMULIR VERIFIKASI NASABAH GADAI</h1></p>
+      <h3>Ketentuan :</h3>
+      √ Jawaban ditulis Tangan sendiri oleh Nasabah 
+      <p> √ Formulir ditanda tangan oleh nasabah sesuai kartu Identitas</p>
+      <label for="">1. kapan Barang jaminan tersebut di beli ?</label>
+      <input type="text" class="name">
+
+      <label for="">2. Dimana Barang Jaminan Tersebut Di Beli</label>
+      <input type="text" class="email">
+
+      <label for="">3. Berapa Harga Barang Jaminan Tersebut Di Beli ?</label>
+      <input type="text" class="country">
+
+      <label for="">4. Apa Saja Spesifikasi Barang Jaminan Tersebut ?</label>
+      <input type="text" class="gender">
+
+      <label for="">5. Siapa Pemilik Barang Jaminan tersebut?</label>
+      <textarea class="message"></textarea>
+      <button type="button" onclick="sendwhatsapp();">Send Via WhatsApp</button>
+    </form>
+
+    <script>
+      function sendwhatsapp(){
+       var phonenumber = "+6283836241218";
+
+       var name = document.querySelector(".name").value;
+       var email = document.querySelector(".email").value;
+       var country = document.querySelector(".country").value;
+       var gender = document.querySelector(".gender").value;
+       var message = document.querySelector(".message").value;
+
+       var url = "https://wa.me/" + phonenumber + "?text="
+       +"*1. kapan Barang jaminan tersebut di beli ? :* "+name+"%0a"
+       +"*2. Dimana Barang Jaminan Tersebut Di Beli ? :* "+email+"%0a"
+       +"*3. Berapa Harga Barang Jaminan Tersebut Di Beli ?:* "+country+"%0a"
+       +"*4. Apa Saja Spesifikasi Barang Jaminan Tersebut ?:* "+gender+"%0a"
+       +"*5. Siapa Pemilik Barang Jaminan tersebut? :* "+message
+       +"%0a%0a"
+       +"FORMULIR VERIFIKASI NASABAH GADAI";
+
+       window.open(url, '_blank').focus();
+     }
+    </script>
+  </body>
+</html>
